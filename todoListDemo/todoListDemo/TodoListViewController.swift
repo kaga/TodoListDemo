@@ -7,9 +7,15 @@
 //
 
 import UIKit
+import TodoKit
 
 class TodoListViewController: UIViewController, UITableViewDataSource, UITextFieldDelegate {
-    var actionItems = [(name: String, timestamp: NSDate)]();
+    var actionItems: [ActionItem]? {
+        didSet {
+            self.tableView.reloadData();
+        }
+    }
+    
     lazy var dateFormatter: NSDateFormatter = {
         var dateFormatter = NSDateFormatter();
         dateFormatter.dateStyle = .ShortStyle;
@@ -45,22 +51,29 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITextFie
             guard let actionName = controller.textFields?.first?.text else {
                 return;
             }
-            self.actionItems.append((name: actionName, timestamp: NSDate()));
-            self.tableView.reloadData();
+            self.todoListProvider.addActionItem(actionName, onCompletion: { (result) in
+                switch result {
+                case .Success(let actionItems):
+                    self.actionItems = actionItems;
+                case .Error(let message):
+                    print("Error: \(message)");
+                }
+            });
         }));
         
         self.presentViewController(controller, animated: true, completion: nil);
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return actionItems.count;
+        return actionItems?.count ?? 0;
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ActionItemCell", forIndexPath: indexPath);
-        let actionItem = actionItems[indexPath.row];
-        cell.textLabel?.text = actionItem.name;
-        cell.detailTextLabel?.text = dateFormatter.stringFromDate(actionItem.timestamp);
+        if let actionItem = actionItems?[indexPath.row] {
+            cell.textLabel?.text = actionItem.name;
+            cell.detailTextLabel?.text = dateFormatter.stringFromDate(actionItem.timestamp);
+        }        
         return cell;
     }
     
