@@ -8,6 +8,7 @@
 
 import XCTest
 @testable import todoListDemo
+@testable import TodoKit
 
 class todoListDemoTests: XCTestCase {
     
@@ -21,16 +22,12 @@ class todoListDemoTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testTodoListDataSource() {
+        //A very simple test case to show that we can test dataSource as well, that was previously difficult 
+        let callSomeoneBro: ActionItem = (name: "Call Someone Bro!", timestamp: NSDate());
+        let dataSource = TodoListDataSource(actionItems: [ callSomeoneBro ]);
+        let tableView = UITableView();
+        XCTAssertEqual(dataSource.tableView(tableView, numberOfRowsInSection: 0), 1);
+        
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }
