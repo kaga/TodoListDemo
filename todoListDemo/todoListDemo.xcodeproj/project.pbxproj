@@ -25,6 +25,11 @@
 		1267728E1D02C27E0076B64E /* TodoListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1267728D1D02C27E0076B64E /* TodoListDataSource.swift */; };
 		126772901D02C2AF0076B64E /* ActionItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1267728F1D02C2AF0076B64E /* ActionItemCell.swift */; };
 		126772921D02C9120076B64E /* TodoListActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126772911D02C9120076B64E /* TodoListActions.swift */; };
+		12D200B41D02D8F8005E9D41 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12D200B31D02D8F8005E9D41 /* NotificationCenter.framework */; };
+		12D200B71D02D8F9005E9D41 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D200B61D02D8F9005E9D41 /* TodayViewController.swift */; };
+		12D200BA1D02D8F9005E9D41 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12D200B81D02D8F9005E9D41 /* MainInterface.storyboard */; };
+		12D200BE1D02D8F9005E9D41 /* todayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 12D200B11D02D8F8005E9D41 /* todayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		12D200C31D02D902005E9D41 /* TodoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 126772691D02ACDF0076B64E /* TodoKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +68,13 @@
 			remoteGlobalIDString = 126772681D02ACDF0076B64E;
 			remoteInfo = TodoKit;
 		};
+		12D200BC1D02D8F9005E9D41 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1267722B1D02A1C40076B64E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 12D200B01D02D8F8005E9D41;
+			remoteInfo = todayExtension;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -75,6 +87,17 @@
 				1267727F1D02ACDF0076B64E /* TodoKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12D200C21D02D8F9005E9D41 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				12D200BE1D02D8F9005E9D41 /* todayExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -105,6 +128,11 @@
 		1267728D1D02C27E0076B64E /* TodoListDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoListDataSource.swift; sourceTree = "<group>"; };
 		1267728F1D02C2AF0076B64E /* ActionItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionItemCell.swift; sourceTree = "<group>"; };
 		126772911D02C9120076B64E /* TodoListActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoListActions.swift; sourceTree = "<group>"; };
+		12D200B11D02D8F8005E9D41 /* todayExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = todayExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		12D200B31D02D8F8005E9D41 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		12D200B61D02D8F9005E9D41 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		12D200B91D02D8F9005E9D41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		12D200BB1D02D8F9005E9D41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +173,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		12D200AE1D02D8F8005E9D41 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12D200C31D02D902005E9D41 /* TodoKit.framework in Frameworks */,
+				12D200B41D02D8F8005E9D41 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -156,6 +193,8 @@
 				126772551D02A1C40076B64E /* todoListDemoUITests */,
 				1267726A1D02ACDF0076B64E /* TodoKit */,
 				126772781D02ACDF0076B64E /* TodoKitTests */,
+				12D200B51D02D8F9005E9D41 /* todayExtension */,
+				12D200B21D02D8F8005E9D41 /* Frameworks */,
 				126772341D02A1C40076B64E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -168,6 +207,7 @@
 				126772521D02A1C40076B64E /* todoListDemoUITests.xctest */,
 				126772691D02ACDF0076B64E /* TodoKit.framework */,
 				126772721D02ACDF0076B64E /* TodoKitTests.xctest */,
+				12D200B11D02D8F8005E9D41 /* todayExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -235,6 +275,24 @@
 			name = TodoListViewController;
 			sourceTree = "<group>";
 		};
+		12D200B21D02D8F8005E9D41 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				12D200B31D02D8F8005E9D41 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		12D200B51D02D8F9005E9D41 /* todayExtension */ = {
+			isa = PBXGroup;
+			children = (
+				12D200B61D02D8F9005E9D41 /* TodayViewController.swift */,
+				12D200B81D02D8F9005E9D41 /* MainInterface.storyboard */,
+				12D200BB1D02D8F9005E9D41 /* Info.plist */,
+			);
+			path = todayExtension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -257,11 +315,13 @@
 				126772301D02A1C40076B64E /* Frameworks */,
 				126772311D02A1C40076B64E /* Resources */,
 				126772831D02ACDF0076B64E /* Embed Frameworks */,
+				12D200C21D02D8F9005E9D41 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				1267727D1D02ACDF0076B64E /* PBXTargetDependency */,
+				12D200BD1D02D8F9005E9D41 /* PBXTargetDependency */,
 			);
 			name = todoListDemo;
 			productName = todoListDemo;
@@ -341,6 +401,23 @@
 			productReference = 126772721D02ACDF0076B64E /* TodoKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		12D200B01D02D8F8005E9D41 /* todayExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12D200BF1D02D8F9005E9D41 /* Build configuration list for PBXNativeTarget "todayExtension" */;
+			buildPhases = (
+				12D200AD1D02D8F8005E9D41 /* Sources */,
+				12D200AE1D02D8F8005E9D41 /* Frameworks */,
+				12D200AF1D02D8F8005E9D41 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = todayExtension;
+			productName = todayExtension;
+			productReference = 12D200B11D02D8F8005E9D41 /* todayExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -369,6 +446,9 @@
 						CreatedOnToolsVersion = 7.3.1;
 						TestTargetID = 126772321D02A1C40076B64E;
 					};
+					12D200B01D02D8F8005E9D41 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
 				};
 			};
 			buildConfigurationList = 1267722E1D02A1C40076B64E /* Build configuration list for PBXProject "todoListDemo" */;
@@ -389,6 +469,7 @@
 				126772511D02A1C40076B64E /* todoListDemoUITests */,
 				126772681D02ACDF0076B64E /* TodoKit */,
 				126772711D02ACDF0076B64E /* TodoKitTests */,
+				12D200B01D02D8F8005E9D41 /* todayExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -429,6 +510,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12D200AF1D02D8F8005E9D41 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12D200BA1D02D8F9005E9D41 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +570,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		12D200AD1D02D8F8005E9D41 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12D200B71D02D8F9005E9D41 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -509,6 +606,11 @@
 			target = 126772681D02ACDF0076B64E /* TodoKit */;
 			targetProxy = 1267727C1D02ACDF0076B64E /* PBXContainerItemProxy */;
 		};
+		12D200BD1D02D8F9005E9D41 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 12D200B01D02D8F8005E9D41 /* todayExtension */;
+			targetProxy = 12D200BC1D02D8F9005E9D41 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -526,6 +628,14 @@
 				126772401D02A1C40076B64E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		12D200B81D02D8F9005E9D41 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				12D200B91D02D8F9005E9D41 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -689,6 +799,7 @@
 		126772811D02ACDF0076B64E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -710,6 +821,7 @@
 		126772821D02ACDF0076B64E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -746,6 +858,28 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kaga.module.TodoKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/todoListDemo.app/todoListDemo";
+			};
+			name = Release;
+		};
+		12D200C01D02D8F9005E9D41 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = todayExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kaga.todoListDemo.todayExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		12D200C11D02D8F9005E9D41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = todayExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kaga.todoListDemo.todayExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -805,6 +939,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		12D200BF1D02D8F9005E9D41 /* Build configuration list for PBXNativeTarget "todayExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12D200C01D02D8F9005E9D41 /* Debug */,
+				12D200C11D02D8F9005E9D41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
