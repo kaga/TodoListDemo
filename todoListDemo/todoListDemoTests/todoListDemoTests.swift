@@ -27,7 +27,6 @@ class todoListDemoTests: XCTestCase {
         let callSomeoneBro: ActionItem = (name: "Call Someone Bro!", timestamp: NSDate());
         let dataSource = TodoListDataSource(actionItems: [ callSomeoneBro ]);
         let tableView = UITableView();
-        XCTAssertEqual(dataSource.tableView(tableView, numberOfRowsInSection: 0), 1);
-        
+        XCTAssertEqual(dataSource.tableView(tableView, numberOfRowsInSection: 0), 1);        
     }
 }
