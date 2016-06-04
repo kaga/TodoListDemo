@@ -768,6 +768,7 @@
 				1267725D1D02A1C40076B64E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1267725E1D02A1C40076B64E /* Build configuration list for PBXNativeTarget "todoListDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -776,6 +777,7 @@
 				126772601D02A1C40076B64E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		126772611D02A1C40076B64E /* Build configuration list for PBXNativeTarget "todoListDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -784,6 +786,7 @@
 				126772631D02A1C40076B64E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		126772801D02ACDF0076B64E /* Build configuration list for PBXNativeTarget "TodoKit" */ = {
 			isa = XCConfigurationList;
@@ -792,6 +795,7 @@
 				126772821D02ACDF0076B64E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		126772841D02ACDF0076B64E /* Build configuration list for PBXNativeTarget "TodoKitTests" */ = {
 			isa = XCConfigurationList;
@@ -800,6 +804,7 @@
 				126772861D02ACDF0076B64E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
