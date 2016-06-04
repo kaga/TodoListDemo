@@ -1,4 +1,4 @@
-`![Application Screenshot](./screenshots/1_1_Application_Created.png)`
+`![Application Screenshot](https://github.com/kaga/TodoListDemo/blob/master/screenshots/1_10_Use_Error_Provider_To_Test.png)`
 
 This repository is a simple todo list application for iOS. It was written to demonstrate how taken away unnecessary responsibility of a view controller can enable us to 
 
