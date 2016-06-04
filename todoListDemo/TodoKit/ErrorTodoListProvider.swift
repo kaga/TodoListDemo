@@ -8,16 +8,16 @@
 
 import Foundation
 
-public class ErrorTodoListProvider: TodoListProvider {
-    public init() {
+class ErrorTodoListProvider: TodoListProvider {
+    init() {
         
     }
     
-    public func addActionItem(name: String, onCompletion: GetActionItemsCallback?) {
+    func addActionItem(name: String, onCompletion: GetActionItemsCallback?) {
         onCompletion?(result: .Error(message: "Unexpected Error"));
     }
     
-    public func getActionItems(onCompletion: GetActionItemsCallback) {
+    func getActionItems(onCompletion: GetActionItemsCallback) {
         onCompletion(result: .Error(message: "Unexpected Error"));
     }
 }

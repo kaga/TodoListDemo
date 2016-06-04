@@ -13,11 +13,15 @@ import TodoKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?;
-    var todoListProvider: TodoListProvider = InMemoryTodoListProvider();
+    lazy var todoListProvider: TodoListProvider = {
+        let providerType = NSProcessInfo.processInfo().todoListProviderType ?? AvailbleTodoListProvider.InMemory
+        return providerType.createProvider();
+    }()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        return true
+        let _ = todoListProvider; 
+        return true;
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -50,3 +54,16 @@ extension UIViewController {
     }
 }
 
+extension NSProcessInfo {
+    var todoListProviderName: String?  {
+        return self.environment["TodoListProvider"];
+    }
+    
+    var todoListProviderType: AvailbleTodoListProvider? {
+        guard let todoListProviderName = self.todoListProviderName,
+            let providerType = AvailbleTodoListProvider(rawValue: todoListProviderName) else {
+                return nil;
+        }
+        return providerType;
+    }
+}

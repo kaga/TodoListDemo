@@ -8,19 +8,19 @@
 
 import Foundation
 
-public class InMemoryTodoListProvider: TodoListProvider {
+class InMemoryTodoListProvider: TodoListProvider {
     private var actionItems = [(name: String, timestamp: NSDate)]();
     
-    public init() {
+    init() {
         
     }
     
-    public func addActionItem(name: String, onCompletion: GetActionItemsCallback?) {
+    func addActionItem(name: String, onCompletion: GetActionItemsCallback?) {
         self.actionItems.append((name: name, timestamp: NSDate()));
         onCompletion?(result: .Success(actionItems: actionItems));
     }
     
-    public func getActionItems(onCompletion: GetActionItemsCallback) {
+    func getActionItems(onCompletion: GetActionItemsCallback) {
         onCompletion(result: .Success(actionItems: actionItems));
     }
 }

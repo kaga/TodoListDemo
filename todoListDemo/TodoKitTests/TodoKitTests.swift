@@ -29,7 +29,7 @@ class TodoKitTests: XCTestCase {
     func addActionItemTest(service: TodoListProvider) {
         let firstExpection = expectationWithDescription("First Get Action Items");
         let secondExpection = expectationWithDescription("Second Get Action Items");
-                
+        
         service.getActionItems { (result) in
             switch result {
             case .Success(let actionItems):
@@ -67,7 +67,7 @@ class TodoKitTests: XCTestCase {
     }
     
     func testErrorTodoListProvider() {
-        let service: TodoListProvider = ErrorTodoListProvider();
+        let service: TodoListProvider = AvailbleTodoListProvider.TestError.createProvider();
         
         let getActionItemsExpectation = expectationWithDescription("Get Action Items");
         let addActionItemExpectation = expectationWithDescription("Add Action Items");
@@ -92,6 +92,23 @@ class TodoKitTests: XCTestCase {
             }
             
             addActionItemExpectation.fulfill();
+        }
+        
+        waitForExpectationsWithTimeout(1, handler: nil);
+    }
+    
+    func testDemoModeListProvider() {
+        let firstExpection = expectationWithDescription("First Get Action Items");
+        let service: TodoListProvider = AvailbleTodoListProvider.DemoMode.createProvider();
+        service.getActionItems { (result) in
+            switch result {
+            case .Success(let actionItems):
+                XCTAssertEqual(actionItems.count, 1);
+            case .Error(_):
+                XCTAssertTrue(false, "Does not expect in-memory store to error");
+            }
+            
+            firstExpection.fulfill();
         }
         
         waitForExpectationsWithTimeout(1, handler: nil);
