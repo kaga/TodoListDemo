@@ -21,6 +21,7 @@
 		1267727F1D02ACDF0076B64E /* TodoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 126772691D02ACDF0076B64E /* TodoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		126772881D02ADC30076B64E /* TodoListProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126772871D02ADC30076B64E /* TodoListProvider.swift */; };
 		1267728A1D02B2A30076B64E /* InMemoryTodoListProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126772891D02B2A30076B64E /* InMemoryTodoListProvider.swift */; };
+		1267728C1D02BAEF0076B64E /* ErrorTodoListProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1267728B1D02BAEF0076B64E /* ErrorTodoListProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		1267727B1D02ACDF0076B64E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		126772871D02ADC30076B64E /* TodoListProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoListProvider.swift; sourceTree = "<group>"; };
 		126772891D02B2A30076B64E /* InMemoryTodoListProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InMemoryTodoListProvider.swift; sourceTree = "<group>"; };
+		1267728B1D02BAEF0076B64E /* ErrorTodoListProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorTodoListProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 				1267726B1D02ACDF0076B64E /* TodoKit.h */,
 				126772871D02ADC30076B64E /* TodoListProvider.swift */,
 				126772891D02B2A30076B64E /* InMemoryTodoListProvider.swift */,
+				1267728B1D02BAEF0076B64E /* ErrorTodoListProvider.swift */,
 				1267726D1D02ACDF0076B64E /* Info.plist */,
 			);
 			path = TodoKit;
@@ -445,6 +448,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1267728A1D02B2A30076B64E /* InMemoryTodoListProvider.swift in Sources */,
+				1267728C1D02BAEF0076B64E /* ErrorTodoListProvider.swift in Sources */,
 				126772881D02ADC30076B64E /* TodoListProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

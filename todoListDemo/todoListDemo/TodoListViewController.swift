@@ -10,8 +10,10 @@ import UIKit
 import TodoKit
 
 class TodoListViewController: UIViewController, UITableViewDataSource, UITextFieldDelegate {
+    //The view controller doesn't care about how to get the list of ActionItems, as long as it is here
     var actionItems: [ActionItem]? {
         didSet {
+            //We will never forget to update the UI when the model has changed
             self.tableView.reloadData();
         }
     }
@@ -52,11 +54,14 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITextFie
                 return;
             }
             self.todoListProvider.addActionItem(actionName, onCompletion: { (result) in
+                //We enforced the ViewController to handle successful and error case
                 switch result {
                 case .Success(let actionItems):
                     self.actionItems = actionItems;
                 case .Error(let message):
-                    print("Error: \(message)");
+                    let controller = UIAlertController(title: "Error", message: message, preferredStyle: .Alert);
+                    controller.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Acknowledge the error message"), style: .Default, handler: nil));
+                    self.presentViewController(controller, animated: true, completion: nil);
                 }
             });
         }));

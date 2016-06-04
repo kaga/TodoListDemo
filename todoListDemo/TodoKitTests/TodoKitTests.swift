@@ -65,4 +65,35 @@ class TodoKitTests: XCTestCase {
         
         waitForExpectationsWithTimeout(1, handler: nil);
     }
+    
+    func testErrorTodoListProvider() {
+        let service: TodoListProvider = ErrorTodoListProvider();
+        
+        let getActionItemsExpectation = expectationWithDescription("Get Action Items");
+        let addActionItemExpectation = expectationWithDescription("Add Action Items");
+        
+        service.getActionItems { (result) in
+            switch result {
+            case .Success(_):
+                XCTAssertFalse(true, "Testing a provider that only emit error, dafuq?")
+            case .Error(_):
+                break;
+            }
+            
+            getActionItemsExpectation.fulfill();
+        }
+        
+        service.addActionItem("Foo") { (result) in
+            switch result {
+            case .Success(_):
+                XCTAssertFalse(true, "Testing a provider that only emit error, dafuq?")
+            case .Error(_):
+                break;
+            }
+            
+            addActionItemExpectation.fulfill();
+        }
+        
+        waitForExpectationsWithTimeout(1, handler: nil);
+    }
 }
