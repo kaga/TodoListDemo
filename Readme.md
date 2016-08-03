@@ -1,5 +1,6 @@
 
 [![Build Status](https://travis-ci.org/kaga/TodoListDemo.svg?branch=master)](https://travis-ci.org/kaga/TodoListDemo)
+[![codecov](https://codecov.io/gh/kaga/TodoListDemo/branch/master/graph/badge.svg)](https://codecov.io/gh/kaga/TodoListDemo)
 
 ![Application Screenshot](./screenshots/1_1_Application_Created.png)
 
