@@ -1,3 +1,6 @@
+
+[![Build Status](https://travis-ci.org/kaga/TodoListDemo.svg?branch=master)](https://travis-ci.org/kaga/TodoListDemo)
+
 ![Application Screenshot](./screenshots/1_1_Application_Created.png)
 
 This repository is a simple todo list application for iOS. It was written to demonstrate how taken away unnecessary responsibility of a view controller can enable us to 
